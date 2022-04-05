@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/obrazki">
+        <file>tlo.png</file>
+        <file>kaczka1_1.png</file>
+        <file>kaczka1_2.png</file>
+        <file>kaczka1_3.png</file>
+        <file>kaczka1_martwa.png</file>
+        <file>kaczka2_1.png</file>
+        <file>kaczka2_2.png</file>
+        <file>kaczka2_3.png</file>
+        <file>kaczka2_martwa.png</file>
+        <file>kaczka3_1.png</file>
+        <file>kaczka3_2.png</file>
+        <file>kaczka3_3.png</file>
+        <file>kaczka3_martwa.png</file>
+    </qresource>
+</RCC>
