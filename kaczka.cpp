@@ -5,7 +5,6 @@ Kaczka::Kaczka()
 {
     this->zmienAnimacje(1);
     this->setScale(2.5);
-    //this->setPos(0.0, 10.0);
     this->kolor = 1 + (rand() % 3);
     this->zywa = true;
     this->szybkoscX = 12.0 + ((rand() % 20) / 10.0);
