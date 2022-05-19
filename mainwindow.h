@@ -28,12 +28,14 @@ private:
     Ui::MainWindow *ui;
     QGraphicsScene* scene;
     QGraphicsTextItem* textWynik;
+    QGraphicsTextItem* textNajlepszyWynik;
     QTimer* timer;
     QList<Kaczka*> kaczki;
     void dodajKaczke();
     void zaktualizujTextWynik();
     int widthTlo, heightTlo, widthKaczka, heightKaczka;
     int wynik;
+    int najlepszyWynik;
     int liczbaTickow;
 };
 #endif // MAINWINDOW_H

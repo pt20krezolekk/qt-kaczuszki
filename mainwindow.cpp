@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     centralWidget()->layout()->setContentsMargins(0, 0, 0, 0);
     statusBar()->hide();
     wynik = 0;
+    najlepszyWynik = 0;
     this->scene = new QGraphicsScene(this);
     ui->graphicsView->setScene(this->scene);
     QPixmap tlo = QPixmap(":/obrazki/tlo.png");
@@ -21,6 +22,9 @@ MainWindow::MainWindow(QWidget *parent)
     this->scene->addPixmap(tlo);
     textWynik = new QGraphicsTextItem();
     this->scene->addItem(textWynik);
+    textNajlepszyWynik = new QGraphicsTextItem();
+    textNajlepszyWynik->setPos(0, 35);
+    this->scene->addItem(textNajlepszyWynik);
     zaktualizujTextWynik();
     this->timer = new QTimer();
     connect(timer, &QTimer::timeout, this, &MainWindow::tick);
@@ -102,11 +106,16 @@ void MainWindow::kaczkaKliknietaSlot() {
     kaczka->zywa = false;
     kaczka->zmienAnimacje(-1);
     this->wynik++;
+
+    if (this->wynik > this->najlepszyWynik)
+        this->najlepszyWynik = this->wynik;
+
     zaktualizujTextWynik();
 }
 
 void MainWindow::zaktualizujTextWynik() {
     this->textWynik->setHtml(QString("<b style='font-size:32px;color:white;'>Wynik: ") + QString::number(this->wynik) + QString("</b>"));
+    this->textNajlepszyWynik->setHtml(QString("<b style='font-size:32px;color:white;'>Najlepszy wynik: ") + QString::number(this->najlepszyWynik) + QString("</b>"));
 }
 
 void MainWindow::keyPressEvent(QKeyEvent* event) {
